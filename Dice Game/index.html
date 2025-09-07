@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplayer Dice Game</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <div id="lobby-status" class="text-lg mb-4"></div>
+    <div class="flex flex-row gap-8 w-full max-w-4xl justify-center">
+      <div class="flex flex-col items-center w-1/2">
+        <div id="player1-canvas"></div>
+        <button id="roll-btn-1" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded shadow">Roll</button>
+        <div id="result-1" class="mt-2 text-xl"></div>
+      </div>
+      <div class="flex flex-col items-center w-1/2">
+        <div id="player2-canvas"></div>
+        <button id="roll-btn-2" class="mt-4 px-4 py-2 bg-green-600 text-white rounded shadow" disabled>Opponent's Turn</button>
+        <div id="result-2" class="mt-2 text-xl"></div>
+      </div>
+    </div>
+    <div id="winner-display" class="mt-8 text-2xl font-bold"></div>
+  </body>
+</html>
