@@ -5,11 +5,8 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer();
 
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
+  const colors = ['red', 'green', 'blue', 'yellow', 'white', 'orange']
+  const color = colors[Math.floor(Math.random() * 6)]
   return color;
 }
 
