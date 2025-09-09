@@ -24,8 +24,15 @@ for (let i = 0; i < 3; i++) {
   for (let j = 0; j < 3; j++) {
     for (let k = 0; k < 3; k++) {
       const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-      const material = new THREE.MeshBasicMaterial( { color: getRandomColor() } );
-      const cube = new THREE.Mesh( geometry, material );
+      const materials = [
+        new THREE.MeshBasicMaterial({ color: 'red' }),    
+        new THREE.MeshBasicMaterial({ color: 'orange' }),   
+        new THREE.MeshBasicMaterial({ color: 'white' }),  
+        new THREE.MeshBasicMaterial({ color: 'yellow' }), 
+        new THREE.MeshBasicMaterial({ color: 'green' }), 
+        new THREE.MeshBasicMaterial({ color: 'blue' })  
+      ];
+      const cube = new THREE.Mesh( geometry, materials );
       const edgeGeometry = new THREE.EdgesGeometry(geometry);
       const edgeMaterial = new THREE.LineBasicMaterial({color:0x000000});
       const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
