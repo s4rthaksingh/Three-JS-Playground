@@ -4,11 +4,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({ antialias: true});
 
-function getRandomColor() {
-  const colors = ['red', 'green', 'blue', 'yellow', 'white', 'orange']
-  const color = colors[Math.floor(Math.random() * 6)]
-  return color;
-}
+
 
 const controls = new OrbitControls( camera, renderer.domElement );
 camera.position.set( 10, 10, 10 );
@@ -25,16 +21,16 @@ for (let i = 0; i < 3; i++) {
     for (let k = 0; k < 3; k++) {
       const geometry = new THREE.BoxGeometry( 1, 1, 1 );
       const materials = [
-        new THREE.MeshBasicMaterial({ color: 'red' }),    
-        new THREE.MeshBasicMaterial({ color: 'orange' }),   
-        new THREE.MeshBasicMaterial({ color: 'white' }),  
-        new THREE.MeshBasicMaterial({ color: 'yellow' }), 
-        new THREE.MeshBasicMaterial({ color: 'green' }), 
-        new THREE.MeshBasicMaterial({ color: 'blue' })  
+        new THREE.MeshStandardMaterial({ color: 'red' }),    
+        new THREE.MeshStandardMaterial({ color: 'orange' }),   
+        new THREE.MeshStandardMaterial({ color: 'white' }),  
+        new THREE.MeshStandardMaterial({ color: 'yellow' }), 
+        new THREE.MeshStandardMaterial({ color: 'green' }), 
+        new THREE.MeshStandardMaterial({ color: 'blue' })  
       ];
       const cube = new THREE.Mesh( geometry, materials );
       const edgeGeometry = new THREE.EdgesGeometry(geometry);
-      const edgeMaterial = new THREE.LineBasicMaterial({color:0x000000});
+      const edgeMaterial = new THREE.LineStandardMaterial({color:0x000000});
       const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
       edges.scale.setScalar(1.001);
       scene.add( cube );
