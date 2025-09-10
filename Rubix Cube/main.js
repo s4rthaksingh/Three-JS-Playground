@@ -42,13 +42,12 @@ for (let i = 0; i < 3; i++) {
 
 
 function turn(side){
-  console.log("Turning right");
+  console.log(`Turning ${side}`);
 }
 
 
 document.addEventListener('keydown', (e) => {
-  if(e.key === 'r')
-    turn(r);
+  turn(e.key)
 })
 function animate() {
 
