@@ -35,7 +35,7 @@ for (let i = 0; i < 3; i++) {
       edges.scale.setScalar(1.001);
       scene.add( cube );
       cube.add( edges );
-      cube.position.set(2*i,2*j,2*k)
+      cube.position.set(i,j,k)
     }
   }
 }
